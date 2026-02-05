@@ -130,24 +130,25 @@ const Hero = () => {
               Vivemos um tempo de renovo espiritual!
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Botão alterado para navegar para nossa história */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => openWhatsApp('cultos')}
-                className="group bg-gradient-to-r from-secondary to-yellow-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3"
-              >
-                <Play className="w-5 h-5" />
-                Cultos Pentecostais
-                <motion.span
-                  className="inline-block group-hover:translate-x-2 transition-transform"
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
+              <Link to="sobre-historia" smooth={true} duration={800}>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group bg-gradient-to-r from-secondary to-yellow-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3"
                 >
-                  →
-                </motion.span>
-              </motion.button>
+                  <Play className="w-5 h-5" />
+                  Conheça Nossa Jornada
+                  <motion.span
+                    className="inline-block group-hover:translate-x-2 transition-transform"
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    →
+                  </motion.span>
+                </motion.button>
+              </Link>
               
               <Link to="missao-valores" smooth={true} duration={800}>
                 <motion.button
@@ -160,7 +161,7 @@ const Hero = () => {
               </Link>
             </div>
 
-            {/* Info Cards - CORES AJUSTADAS COM ESQUEMA HARMONIZADO */}
+            {/* Info Cards - TEXTOS CENTRALIZADOS NO MOBILE */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -213,9 +214,12 @@ const Hero = () => {
                     </div>
                   )}
                   
-                  <div className="text-secondary mb-4">{info.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-2">{info.title}</h3>
-                  <p className="text-gray-100">{info.desc}</p>
+                  {/* Conteúdo do card - centralizado no mobile, normal no desktop */}
+                  <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                    <div className="text-secondary mb-4">{info.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-2">{info.title}</h3>
+                    <p className="text-gray-100">{info.desc}</p>
+                  </div>
                   
                   {/* Efeito de brilho ao passar mouse */}
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>

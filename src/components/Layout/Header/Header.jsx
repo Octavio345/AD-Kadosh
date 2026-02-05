@@ -174,7 +174,7 @@ const Header = () => {
                       </div>
                     ) : (
                       <img 
-                        src="/logo.png"
+                        src="/logo.png"  // Caminho absoluto
                         alt="Assembleia de Deus Ministério Kadosh" 
                         className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                         onError={() => setLogoError(true)}
@@ -368,7 +368,7 @@ const Header = () => {
                           </div>
                         ) : (
                           <img 
-                            src="/logo.png"
+                            src="/logo.png"  // Caminho absoluto
                             alt="Logo"
                             className="w-full h-full object-cover"
                             onError={() => setLogoError(true)}

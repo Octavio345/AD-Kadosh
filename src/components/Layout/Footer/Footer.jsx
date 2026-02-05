@@ -56,7 +56,7 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shadow-xl border-4 border-white">
                   <img 
-                    src="/logo.png"
+                    src="/logo.png"  // Caminho absoluto
                     alt="Assembleia de Deus Ministério Kadosh" 
                     className="absolute inset-0 w-full h-full object-cover"
                     style={{ transform: 'scale(1.1)', transformOrigin: 'center' }}
