@@ -104,7 +104,7 @@ const Ministries = () => {
             className="inline-block px-6 py-3 bg-white/80 text-secondary rounded-full text-sm font-semibold mb-6 border border-primary/20 backdrop-blur-sm shadow-sm"
           >
             <Sparkles className="inline w-4 h-4 mr-2 text-secondary" />
-            Ministérios Fundadores
+            Nossos Departamentos
           </motion.span>
 
           <motion.h2
@@ -115,7 +115,7 @@ const Ministries = () => {
             className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-primary mb-6"
           >
             Nossos <span className="text-secondary relative">
-              Fundamentos
+              Departamentos
               <motion.div
                 initial={{ width: 0 }}
                 whileInView={{ width: '100%' }}
@@ -134,7 +134,7 @@ const Ministries = () => {
             className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
           >
             Desde nossa fundação em <span className="font-semibold text-primary">19 de Maio de 2020</span>, 
-            estes ministérios têm sido os pilares que sustentam nossa igreja e testemunham 
+            estes departamentos têm sido os pilares que sustentam nossa igreja e testemunham 
             o poder de Deus em nossa comunidade.
           </motion.p>
         </motion.div>
