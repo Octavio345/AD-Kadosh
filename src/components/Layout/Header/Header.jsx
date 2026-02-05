@@ -99,7 +99,7 @@ const Header = () => {
       ]
     },
     { 
-      name: 'Ministérios', 
+      name: 'Departamentos', 
       action: () => navigateToSection('ministerios-fundadores'),
       icon: <Users size={20} />,
     },
