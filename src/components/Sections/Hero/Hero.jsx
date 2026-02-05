@@ -21,7 +21,6 @@ const Hero = () => {
     return () => clearInterval(typing);
   }, []);
 
-  // Função para abrir WhatsApp
   const openWhatsApp = (messageType) => {
     const whatsappNumber = '5517996493144';
     let message = '';
@@ -99,15 +98,15 @@ const Hero = () => {
             transition={{ duration: 1 }}
             className="text-center"
           >
-            {/* Animated Text - MANTIDA A COR ORIGINAL (secondary) COM TAMANHO AUMENTADO */}
+            {/* Animated Text - COM FONTE INTER */}
             <div className="mb-8">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl text-secondary font-bold mb-4 tracking-wide">
-                <span className="typewriter-text font-sans">{text}</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-secondary font-bold mb-4 tracking-wide font-sans">
+                <span className="typewriter-text">{text}</span>
                 <span className="animate-pulse ml-1 text-secondary">|</span>
               </h2>
             </div>
 
-            {/* Main Title */}
+            {/* Main Title - COM FONTE CRIMSON TEXT */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
               <span className="text-secondary relative block mb-4">
                 Tempo de Renovo
@@ -123,8 +122,8 @@ const Hero = () => {
               </span>
             </h1>
 
-            {/* Description */}
-            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+            {/* Description - COM FONTE INTER */}
+            <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-sans">
               Uma igreja pentecostal comprometida com a palavra de Deus, 
               o mover do Espírito Santo e a salvação das almas. 
               Vivemos um tempo de renovo espiritual!
@@ -136,7 +135,7 @@ const Hero = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group bg-gradient-to-r from-secondary to-yellow-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3"
+                  className="group bg-gradient-to-r from-secondary to-yellow-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 font-sans"
                 >
                   <Play className="w-5 h-5" />
                   Conheça Nossa Jornada
@@ -154,14 +153,14 @@ const Hero = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-all backdrop-blur-sm"
+                  className="border-2 border-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-all backdrop-blur-sm font-sans"
                 >
                   Nossa Doutrina
                 </motion.button>
               </Link>
             </div>
 
-            {/* Info Cards - TEXTOS CENTRALIZADOS NO MOBILE */}
+            {/* Info Cards */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -208,7 +207,7 @@ const Hero = () => {
                   {/* Destaque para os principais cultos */}
                   {info.highlight && (
                     <div className="absolute top-3 right-3">
-                      <span className={`text-xs ${info.badge} text-white px-3 py-1 rounded-full font-semibold shadow-lg`}>
+                      <span className={`text-xs ${info.badge} text-white px-3 py-1 rounded-full font-semibold shadow-lg font-sans`}>
                         Principal
                       </span>
                     </div>
@@ -217,8 +216,8 @@ const Hero = () => {
                   {/* Conteúdo do card - centralizado no mobile, normal no desktop */}
                   <div className="flex flex-col items-center md:items-start text-center md:text-left">
                     <div className="text-secondary mb-4">{info.icon}</div>
-                    <h3 className="text-xl font-bold text-white mb-2">{info.title}</h3>
-                    <p className="text-gray-100">{info.desc}</p>
+                    <h3 className="text-xl font-bold text-white mb-2 font-serif">{info.title}</h3>
+                    <p className="text-gray-100 font-sans">{info.desc}</p>
                   </div>
                   
                   {/* Efeito de brilho ao passar mouse */}

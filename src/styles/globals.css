@@ -61,3 +61,14 @@ body {
   margin: 0 !important;
   padding: 0 !important;
 }
+/* Fontes serifadas elegantes para títulos + sans-serif moderna para textos */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Uso no CSS */
+.font-serif {
+  font-family: 'Crimson Text', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Inter', system-ui, sans-serif;
+}

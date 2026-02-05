@@ -5,7 +5,8 @@ import {
   Church, Calendar, Users, Music,
   MapPin, Star, ArrowRight,
   HeartHandshake, Mic2, Users2,
-  Heart, Target, Clock, Navigation
+  Heart, Target, Clock, Navigation,
+  MessageCircle
 } from 'lucide-react';
 import { Link } from 'react-scroll';
 
@@ -41,13 +42,7 @@ const About = () => {
     { number: '100+', label: 'Vidas Transformadas', icon: <Heart />, description: 'Pelo poder de Deus' },
   ];
 
-  const worshipTimes = [
-    { day: 'Quinta-feira', time: '19:30h', type: 'Culto de Oração', icon: <Flame /> },
-    { day: 'Domingo', time: '18:30h', type: 'Culto Dominical', icon: <Church /> },
-    { day: '2º Domingo', time: '18:30h', type: 'Santa Ceia', icon: <Cross /> },
-  ];
-
-  // Ministérios fundadores - CORRIGIDO
+  // Ministérios fundadores
   const foundingMinistries = [
     {
       id: 1,
@@ -69,7 +64,22 @@ const About = () => {
     }
   ];
 
-  // Função para abrir WhatsApp
+  // Função para abrir WhatsApp do Pastor
+  const openPastorWhatsApp = () => {
+    const pastorNumber = '5517996493144'; // Número do Pastor Oziel
+    const message = `Olá, Pastor Oziel! Vi seu perfil no site da Assembleia de Deus Ministério Kadosh e gostaria de conversar com o senhor. 
+
+• Tenho interesse em conhecer melhor a igreja
+• Gostaria de orientação espiritual
+• Quero saber mais sobre os cultos
+
+Aguardo seu retorno. Que Deus abençoe!`;
+
+    const url = `https://wa.me/${pastorNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  // Função para abrir WhatsApp geral
   const openWhatsApp = (messageType) => {
     const whatsappNumber = '5517996493144';
     let message = '';
@@ -370,44 +380,6 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Horários de Culto */}
-        <motion.div
-          id="horarios-culto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-12 md:mb-20"
-        >
-          <h3 className="text-3xl font-bold text-primary text-center mb-8 md:mb-12">
-            Horários de <span className="text-secondary">Culto</span>
-          </h3>
-          
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {worshipTimes.map((time, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition-shadow"
-              >
-                <div className="text-secondary mb-4 flex justify-center">
-                  {time.icon}
-                </div>
-                <h4 className="text-xl font-bold text-primary mb-2">{time.day}</h4>
-                <div className="text-2xl font-bold text-secondary mb-2">{time.time}</div>
-                <p className="text-gray-600">{time.type}</p>
-                <div className="mt-4">
-                  <Clock className="w-4 h-4 text-gray-400 inline mr-2" />
-                  <span className="text-sm text-gray-500">Chegue 15min antes</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -590,15 +562,34 @@ const About = () => {
                   
                   <div className="pt-4">
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <Link to="contact" smooth={true} duration={800}>
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="border-2 border-primary text-primary px-6 py-3 rounded-full font-bold hover:bg-primary/5 transition-all text-sm md:text-base"
+                      {/* Botão atualizado para abrir WhatsApp do Pastor */}
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={openPastorWhatsApp}
+                        className="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full font-bold hover:shadow-xl transition-all text-sm md:text-base flex items-center justify-center gap-2 group"
+                      >
+                        <MessageCircle className="w-5 h-5" />
+                        Fale com o Pastor
+                        <motion.span
+                          className="inline-block group-hover:translate-x-1 transition-transform"
+                          animate={{ x: [0, 3, 0] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
                         >
-                          Fale com o Pastor
-                        </motion.button>
-                      </Link>
+                          →
+                        </motion.span>
+                      </motion.button>
+                      
+                      {/* Botão alternativo para horários */}
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => openWhatsApp('horarios')}
+                        className="border-2 border-primary text-primary px-6 py-3 rounded-full font-bold hover:bg-primary/5 transition-all text-sm md:text-base"
+                      >
+                        <Calendar className="inline w-4 h-4 mr-2" />
+                        Horários
+                      </motion.button>
                     </div>
                   </div>
                 </div>
