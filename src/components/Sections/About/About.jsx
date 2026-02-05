@@ -6,7 +6,12 @@ import {
   MapPin, Star, ArrowRight,
   HeartHandshake, Mic2, Users2,
   Heart, Target, Clock, Navigation,
-  MessageCircle
+  MessageCircle,
+  Instagram,
+  Facebook,
+  Youtube,
+  Video,
+  Globe
 } from 'lucide-react';
 import { Link } from 'react-scroll';
 
@@ -61,6 +66,34 @@ const About = () => {
       icon: <Music className="w-6 h-6 text-secondary" />,
       color: 'from-purple-500 to-pink-400',
       textColor: 'text-purple-600'
+    }
+  ];
+
+  // Links para redes sociais com transmissões
+  const liveStreamLinks = [
+    {
+      platform: 'Instagram',
+      icon: <Instagram className="w-6 h-6" />,
+      url: 'https://www.instagram.com/ad_ministerio_kadosh/',
+      color: 'from-purple-600 via-pink-500 to-orange-400',
+      description: 'Transmissões ao vivo de todos os cultos',
+      liveText: 'AO VIVO'
+    },
+    {
+      platform: 'Facebook',
+      icon: <Facebook className="w-6 h-6" />,
+      url: 'https://www.facebook.com/adzonasul.mirassol.1',
+      color: 'from-blue-600 to-blue-800',
+      description: 'Cultos transmitidos ao vivo',
+      liveText: 'AO VIVO'
+    },
+    {
+      platform: 'YouTube',
+      icon: <Youtube className="w-6 h-6" />,
+      url: 'https://www.youtube.com/@ozielism',
+      color: 'from-red-600 to-red-700',
+      description: 'Canal do Pastor Oziel com mensagens',
+      liveText: 'AO VIVO'
     }
   ];
 
@@ -274,6 +307,90 @@ Aguardo seu retorno. Que Deus abençoe!`;
           </motion.div>
         </div>
 
+        {/* NOVA SEÇÃO: Cultos ao vivo nas redes sociais */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12 md:mb-20"
+        >
+          <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-secondary/5 rounded-2xl md:rounded-3xl p-6 md:p-8 border border-primary/20">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                  <Video className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-primary">
+                  Cultos <span className="text-secondary">Ao Vivo</span>
+                </h3>
+              </div>
+              <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+                Não pode vir pessoalmente? <strong className="text-primary">Todos os nossos cultos são transmitidos ao vivo! </strong> 
+                  Acompanhe nossas redes sociais e participe conosco virtualmente.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
+              {liveStreamLinks.map((platform, index) => (
+                <motion.a
+                  key={platform.platform}
+                  href={platform.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className={`bg-gradient-to-br ${platform.color} backdrop-blur-sm rounded-xl p-5 md:p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 relative overflow-hidden group`}
+                >
+                  {/* Badge ao vivo */}
+                  <div className="absolute top-3 right-3">
+                    <span className="bg-white/20 text-white text-xs px-2 py-1 rounded-full font-bold backdrop-blur-sm">
+                      {platform.liveText}
+                    </span>
+                  </div>
+
+                  {/* Ícone da plataforma */}
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <div className="text-white">
+                      {platform.icon}
+                    </div>
+                  </div>
+
+                  {/* Nome da plataforma */}
+                  <h4 className="text-xl font-bold text-white mb-2">{platform.platform}</h4>
+                  
+                  {/* Descrição */}
+                  <p className="text-white/90 text-sm mb-4">{platform.description}</p>
+
+                  {/* Botão de acesso */}
+                  <div className="mt-4">
+                    <span className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-lg text-sm font-semibold backdrop-blur-sm group-hover:bg-white/30 transition-colors">
+                      Acessar {platform.platform}
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+
+                  {/* Efeito de brilho ao passar mouse */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Nota importante */}
+            <div className="mt-8 text-center">
+              <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-3 rounded-xl border border-primary/20">
+                <Globe className="w-5 h-5 text-primary" />
+                <p className="text-sm text-gray-700">
+                  <strong>Importante:</strong> No YouTube, acompanhe pelo canal pessoal do Pastor Oziel. 
+                  As transmissões são feitas diretamente de nossa igreja!
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* CTA de Visitação */}
         <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl md:rounded-3xl p-6 md:p-12 relative overflow-hidden mb-12">
             {/* Background Pattern */}
@@ -304,17 +421,6 @@ Aguardo seu retorno. Que Deus abençoe!`;
                 Temos cultos poderosos onde a presença de Deus se manifesta, vidas são transformadas 
                 e o fogo pentecostal continua ardendo!
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => openWhatsApp('horarios')}
-                  className="border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold hover:bg-white/10 transition-all text-sm md:text-base"
-                >
-                  <Calendar className="inline w-4 h-4 md:w-5 md:h-5 mr-2" />
-                  Horários de Culto
-                </motion.button>
-              </div>
             </div>
             
           </div>
@@ -371,7 +477,7 @@ Aguardo seu retorno. Que Deus abençoe!`;
                     rel="noopener noreferrer"
                     className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors flex items-center gap-2"
                   >
-                    <span className="font-bold text-sm">W</span>
+                    <MapPin className="w-3 h-3" />
                     Waze
                   </a>
                 </div>
@@ -428,7 +534,7 @@ Aguardo seu retorno. Que Deus abençoe!`;
             
             <p className="text-gray-700 mb-6">
               A Assembleia de Deus Ministério Kadosh tem como missão <strong className="text-primary">propagar o evangelho 
-              completo de Jesus Cristo</strong>, batizar os convertidos no Espírito Santo, ensinar a sã doutrina 
+              completo de Jesus Cristo</strong>, batizar os convertidos nas águas e orienta-lós a busca do <strong className="text-primary">batismo com Espírito Santo</strong>, ensinar a sã doutrina 
               apostólica e preparar o povo de Deus para a volta iminente de Cristo.
             </p>
 
