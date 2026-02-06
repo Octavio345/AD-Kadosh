@@ -157,7 +157,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex justify-between items-center">
             {/* Logo Section */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 sm:gap-4">
               {/* Logo Container */}
               <div 
                 onClick={scrollToTop}
@@ -184,8 +184,20 @@ const Header = () => {
                 </div>
               </div>
               
-              {/* Church Name - Mobile Optimized */}
-              <div className="hidden sm:block">
+              {/* Texto Centralizado entre Logo e Menu Hamburger - VISÍVEL APENAS NO MOBILE */}
+              <div className="lg:hidden flex-1 flex justify-center">
+                <div className="flex flex-col items-center">
+                  <span className="text-white text-sm font-bold leading-tight text-center">
+                    Assembleia de Deus
+                  </span>
+                  <span className="text-secondary font-bold text-xs sm:text-sm tracking-wider text-center">
+                    Ministério Kadosh
+                  </span>
+                </div>
+              </div>
+
+              {/* Church Name - Desktop */}
+              <div className="hidden lg:block">
                 <h1 className="text-lg md:text-xl font-serif font-bold text-white leading-tight">
                   Assembleia de Deus
                 </h1>
@@ -291,22 +303,12 @@ const Header = () => {
             </nav>
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden flex items-center gap-4">
-              {/* WhatsApp Button Mobile */}
-              <motion.button
-                onClick={() => openWhatsApp('informacoes')}
-                whileTap={{ scale: 0.9 }}
-                className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-green-500 to-green-600 text-white text-sm font-medium shadow-lg"
-              >
-                <MessageCircle size={16} />
-                <span>Fale Conosco</span>
-              </motion.button>
-
+            <div className="lg:hidden flex items-center gap-3">
               {/* Menu Button */}
               <motion.button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 whileTap={{ scale: 0.95 }}
-                className="relative w-12 h-12 rounded-xl bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center border border-white/10"
+                className="relative w-10 h-10 rounded-xl bg-gradient-to-r from-white/10 to-white/5 flex items-center justify-center border border-white/10"
                 aria-label="Menu"
               >
                 <AnimatePresence mode="wait">
@@ -318,7 +320,7 @@ const Header = () => {
                       exit={{ rotate: 90, opacity: 0 }}
                       className="text-white"
                     >
-                      <X size={24} />
+                      <X size={20} />
                     </motion.div>
                   ) : (
                     <motion.div
@@ -328,7 +330,7 @@ const Header = () => {
                       exit={{ rotate: -90, opacity: 0 }}
                       className="text-white"
                     >
-                      <Menu size={24} />
+                      <Menu size={20} />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -377,7 +379,7 @@ const Header = () => {
                       </div>
                       <div>
                         <h2 className="text-lg font-serif font-bold text-white">Assembleia de Deus</h2>
-                        <p className="text-secondary font-bold">KADOSH</p>
+                        <p className="text-secondary font-bold">Ministério Kadosh</p>
                       </div>
                     </div>
                     <button
