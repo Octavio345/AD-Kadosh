@@ -98,7 +98,6 @@ const Hero = () => {
             transition={{ duration: 1 }}
             className="text-center"
           >
-            {/* Animated Text - COM FONTE INTER */}
             <div className="mb-8">
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-secondary font-bold mb-4 tracking-wide font-sans">
                 <span className="typewriter-text">{text}</span>
@@ -106,7 +105,7 @@ const Hero = () => {
               </h2>
             </div>
 
-            {/* Main Title - COM FONTE CRIMSON TEXT */}
+
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
               <span className="text-secondary relative block mb-4">
                 Tempo de Renovo
@@ -122,14 +121,12 @@ const Hero = () => {
               </span>
             </h1>
 
-            {/* Description - COM FONTE INTER */}
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-sans">
               Uma igreja pentecostal comprometida com a palavra de Deus, 
               o mover do Espírito Santo e a salvação das almas. 
               Vivemos um tempo de renovo espiritual!
             </p>
 
-            {/* CTA Buttons - Botão alterado para navegar para nossa história */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link to="sobre-historia" smooth={true} duration={800}>
                 <motion.button

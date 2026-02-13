@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   MapPin, Phone, Clock,
   Instagram, Facebook, Youtube, MessageCircle,
-  Heart, Church, Users
+  Heart, Church, Users, Flame
 } from 'lucide-react';
 import { Link } from 'react-scroll';
 
@@ -36,9 +36,9 @@ const Footer = () => {
   ];
 
   const worshipTimes = [
-    { day: 'Quinta-feira', time: '19:30h', type: 'Culto de Oração' },
-    { day: 'Domingo', time: '18:30h', type: 'Culto Dominical' },
-    { day: '2º Domingo', time: '18:30h', type: 'Santa Ceia' },
+    { day: 'Quinta-feira', time: '19:30h', type: 'Campanha', description: 'Sempre uma nova campanha', icon: Flame },
+    { day: 'Domingo', time: '18:30h', type: 'Culto da Família', icon: Users },
+    { day: '2º Domingo', time: '18:30h', type: 'Santa Ceia', icon: Church },
   ];
 
   return (
@@ -102,8 +102,6 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-
-            {/* Coluna 3 - Ministérios */}
             <div>
               <h4 className="text-lg font-bold mb-4 flex items-center gap-2">
                 <Church className="w-5 h-5" />
@@ -120,22 +118,34 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Coluna 4 - Horários */}
             <div>
               <h4 className="text-lg font-bold mb-4 flex items-center gap-2">
                 <Clock className="w-5 h-5" />
                 Horários
               </h4>
               <div className="space-y-3">
-                {worshipTimes.map((time) => (
-                  <div key={time.day} className="bg-white/10 p-3 rounded">
-                    <div className="flex justify-between">
-                      <span className="font-semibold">{time.day}</span>
-                      <span className="font-bold">{time.time}</span>
+                {worshipTimes.map((time) => {
+                  const IconComponent = time.icon;
+                  return (
+                    <div key={time.day} className="bg-white/10 p-3 rounded-lg hover:bg-white/15 transition-colors">
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center gap-2">
+                          {IconComponent && <IconComponent className="w-4 h-4 text-secondary" />}
+                          <span className="font-semibold">{time.day}</span>
+                        </div>
+                        <span className="font-bold text-secondary">{time.time}</span>
+                      </div>
+                      <div className="flex items-center justify-between mt-1">
+                        <p className="text-xs opacity-90">{time.type}</p>
+                        {time.description && (
+                          <span className="text-[10px] bg-secondary/20 px-2 py-0.5 rounded-full text-secondary-light">
+                            {time.description}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    <p className="text-xs opacity-90 mt-1">{time.type}</p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
               
               <div className="mt-4 space-y-2">

@@ -36,9 +36,9 @@ const Gallery = () => {
     {
       id: 3,
       src: '/images/3.jpeg',
-      title: 'Culto',
+      title: 'Culto de Campanha',
       category: 'cultos',
-      description: 'Quinta-feira de oração e intercessão.',
+      description: 'Quinta-feira de Campanha.',
       featured: false
     },
     {

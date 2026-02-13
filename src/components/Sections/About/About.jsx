@@ -69,7 +69,7 @@ const About = () => {
     }
   ];
 
-  // Links para redes sociais com transmissões
+
   const liveStreamLinks = [
     {
       platform: 'Instagram',
