@@ -93,7 +93,6 @@ const Header = () => {
       submenu: [
         { name: 'Nossa História', action: () => navigateToSection('sobre-historia'), icon: <BookOpen size={16} /> },
         { name: 'Missão e Valores', action: () => navigateToSection('missao-valores'), icon: <Cross size={16} /> },
-        { name: 'Horários de Culto', action: () => navigateToSection('horarios-culto'), icon: <Clock size={16} /> },
         { name: 'Localização', action: () => navigateToSection('mapa-localizacao'), icon: <MapPin size={16} /> },
         { name: 'Nossa Liderança', action: () => navigateToSection('pastoral'), icon: <Users size={16} /> },
       ]

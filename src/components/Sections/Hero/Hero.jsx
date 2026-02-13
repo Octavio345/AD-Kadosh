@@ -170,21 +170,24 @@ const Hero = () => {
               {[
                 { 
                   icon: <Flame />, 
-                  title: 'Culto de Ensino', 
-                  desc: 'Quinta-feira 19:30h',
+                  title: 'Campanha', 
+                  desc: 'Quinta-feira • 19:30h',
+                  subtitle: 'Sempre uma nova campanha',
                   highlight: true,
                   color: 'from-purple-800/90 to-indigo-900/90',
                   border: 'border-purple-500/60',
-                  badge: 'bg-purple-600'
+                  badge: 'bg-purple-600',
+                  badgeText: 'Toda semana'
                 },
                 { 
                   icon: <Cross />, 
-                  title: 'Culto da família', 
-                  desc: 'Domingo 18:30h',
+                  title: 'Culto da Família', 
+                  desc: 'Domingo • 18:30h',
                   highlight: true,
                   color: 'from-amber-800/90 to-yellow-900/90',
                   border: 'border-secondary/70',
-                  badge: 'bg-secondary'
+                  badge: 'bg-secondary',
+                  badgeText: 'Principal'
                 },
                 { 
                   icon: <Church />, 
@@ -193,7 +196,8 @@ const Hero = () => {
                   highlight: true,
                   color: 'from-slate-800/90 to-gray-900/90',
                   border: 'border-gray-500/50',
-                  badge: 'bg-gray-600'
+                  badge: 'bg-gray-600',
+                  badgeText: 'Mensal'
                 },
               ].map((info, index) => (
                 <motion.div
@@ -204,11 +208,11 @@ const Hero = () => {
                   whileHover={{ y: -10 }}
                   className={`bg-gradient-to-br ${info.color} backdrop-blur-lg p-6 rounded-2xl border ${info.border} hover:shadow-2xl hover:scale-[1.02] transition-all relative overflow-hidden group shadow-lg`}
                 >
-                  {/* Destaque para os principais cultos */}
+                  {/* Badge superior */}
                   {info.highlight && (
                     <div className="absolute top-3 right-3">
                       <span className={`text-xs ${info.badge} text-white px-3 py-1 rounded-full font-semibold shadow-lg font-sans`}>
-                        Principal
+                        {info.badgeText}
                       </span>
                     </div>
                   )}
@@ -216,8 +220,11 @@ const Hero = () => {
                   {/* Conteúdo do card - centralizado no mobile, normal no desktop */}
                   <div className="flex flex-col items-center md:items-start text-center md:text-left">
                     <div className="text-secondary mb-4">{info.icon}</div>
-                    <h3 className="text-xl font-bold text-white mb-2 font-serif">{info.title}</h3>
-                    <p className="text-gray-100 font-sans">{info.desc}</p>
+                    <h3 className="text-xl font-bold text-white mb-1 font-serif">{info.title}</h3>
+                    {info.subtitle && (
+                      <p className="text-sm text-secondary/90 font-semibold mb-2 font-sans">{info.subtitle}</p>
+                    )}
+                    <p className="text-gray-100 font-sans text-base md:text-lg">{info.desc}</p>
                   </div>
                   
                   {/* Efeito de brilho ao passar mouse */}
