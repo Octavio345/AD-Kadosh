@@ -96,7 +96,7 @@ const Contact = () => {
                   <h4 className="font-bold text-primary mb-1">Endereço</h4>
                   <p className="text-gray-700">
                     Assembleia de Deus Ministério Kadosh<br />
-                    Av. José Emídio de Faria, Nº 2198<br />
+                    Av. José Emídio de Faria, Nº 2184<br />
                     Bairro Moreira, Mirassol - SP<br />
                     CEP: 15130-000
                   </p>
@@ -194,7 +194,7 @@ const Contact = () => {
             <div className="mt-8 pt-8 border-t border-gray-200">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <motion.button
-                  onClick={() => window.open('https://www.google.com/maps/dir/?api=1&destination=Av.+José+Emídio+de+Faria,+2198+-+Moreira,+Mirassol+-+SP', '_blank')}
+                  onClick={() => window.open('https://www.google.com/maps/dir/?api=1&destination=Av.+José+Emídio+de+Faria,+2184+-+Moreira,+Mirassol+-+SP', '_blank')}
                   className="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow flex items-center justify-center gap-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

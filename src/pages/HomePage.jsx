@@ -7,6 +7,7 @@ import Footer from '../components/Layout/Footer/Footer';
 import Hero from '../components/Sections/Hero/Hero';
 import About from '../components/Sections/About/About';
 import Ministries from '../components/Sections/Ministries/Ministries';
+import GalleryPreview from '../components/Sections/GalleryPreview/GalleryPreview'; // Importe o novo componente
 import Contact from '../components/Sections/Contact/Contact';
 
 const HomePage = () => {
@@ -29,6 +30,7 @@ const HomePage = () => {
           <Hero />
           <About />
           <Ministries />
+          <GalleryPreview /> {/* Adicione o componente aqui */}
           <Contact />
           <div className="h-20"></div>
         </main>

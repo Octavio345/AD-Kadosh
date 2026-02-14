@@ -394,7 +394,7 @@ const Header = () => {
                     <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5">
                       <MapPin size={18} className="text-secondary" />
                       <div>
-                        <p className="text-sm font-medium text-white">Av. José Emídio de Faria, 2198</p>
+                        <p className="text-sm font-medium text-white">Av. José Emídio de Faria, 2184</p>
                         <p className="text-xs text-white/60">Mirassol/SP</p>
                       </div>
                     </div>

@@ -227,7 +227,7 @@ Aguardo seu retorno. Que Deus abençoe!`;
                     <p className="text-gray-700 mb-4">
                       A Assembleia de Deus Ministério Kadosh foi fundada no dia <strong className="text-secondary">19 de Maio de 2020</strong> 
                       e desde então permanece no mesmo local:{' '}
-                      <strong className="text-primary">Av. José Emídio de Faria, Nº 2198 - Moreira, Mirassol-SP</strong>.
+                      <strong className="text-primary">Av. José Emídio de Faria, Nº 2184 - Moreira, Mirassol-SP</strong>.
                     </p>
                     <p className="text-gray-700">
                       Este endereço tem sido testemunha de milagres, conversões e vidas transformadas pelo poder de Deus. 
@@ -414,7 +414,7 @@ Aguardo seu retorno. Que Deus abençoe!`;
                 Venha nos Visitar!
               </h3>
               <p className="text-white/90 text-base md:text-lg mb-4 md:mb-6 max-w-2xl mx-auto">
-                <strong>Endereço:</strong> Av. José Emídio de Faria, 2198 - Moreira, Mirassol-SP
+                <strong>Endereço:</strong> Av. José Emídio de Faria, 2184 - Moreira, Mirassol-SP
               </p>
               <p className="text-white/90 text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto">
                 Se você está em Mirassol ou região, venha conhecer nossa igreja. 
@@ -458,12 +458,12 @@ Aguardo seu retorno. Que Deus abençoe!`;
               <div className="flex flex-col items-center text-center gap-3">
                 <div className="flex items-center gap-2 text-gray-700 mb-2">
                   <MapPin className="w-4 h-4 text-secondary" />
-                  <span className="font-medium">Av. José Emídio de Faria, 2198 - Mirassol/SP</span>
+                  <span className="font-medium">Av. José Emídio de Faria, 2184 - Mirassol/SP</span>
                 </div>
                 
                 <div className="flex gap-2">
                   <a
-                    href="https://www.google.com/maps/dir/?api=1&destination=Av.+José+Emídio+de+Faria,+2198+-+Moreira,+Mirassol+-+SP"
+                    href="https://www.google.com/maps/dir/?api=1&destination=Av.+José+Emídio+de+Faria,+2184+-+Moreira,+Mirassol+-+SP"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-2"

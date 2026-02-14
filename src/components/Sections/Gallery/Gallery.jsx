@@ -373,7 +373,7 @@ const Gallery = () => {
             </div>
             
             <p className="text-white/80 mb-4 text-sm md:text-base max-w-2xl mx-auto">
-              Assembleia de Deus Ministério Kadosh • Av. José Emídio de Faria, 2198 • Mirassol/SP
+              Assembleia de Deus Ministério Kadosh • Av. José Emídio de Faria, 2184 • Mirassol/SP
             </p>
             
             <div className="flex items-center justify-center gap-3 md:gap-4 mb-6 text-white/80 text-sm md:text-base">

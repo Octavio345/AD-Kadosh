@@ -151,7 +151,7 @@ const Footer = () => {
               <div className="mt-4 space-y-2">
                 <div className="flex items-center gap-2 opacity-90">
                   <MapPin className="w-4 h-4 flex-shrink-0 text-white" />
-                  <span className="text-sm text-white/90">Av. José Emídio de Faria, 2198 - Mirassol/SP</span>
+                  <span className="text-sm text-white/90">Av. José Emídio de Faria, 2184 - Mirassol/SP</span>
                 </div>
                 <div className="flex items-center gap-2 opacity-90">
                   <Phone className="w-4 h-4 flex-shrink-0 text-white" />
