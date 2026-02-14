@@ -52,7 +52,7 @@ const Ministries = () => {
       textColor: 'text-purple-600',
       logo: '/assets/images/logo-vozes-que-clamam.png',
       logoFallback: 'VQ',
-      schedule: 'Quinta-feira 19:30h (Culto de Oração)',
+      schedule: 'Quinta-feira 19:30h (Campanha - Sempre uma nova)',
       leader: 'Irmãos intercessores',
       category: 'fundadores',
       featured: true,

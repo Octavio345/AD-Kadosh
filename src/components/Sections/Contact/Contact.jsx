@@ -112,10 +112,10 @@ const Contact = () => {
                   <h4 className="font-bold text-primary mb-1">Horários de Culto</h4>
                   <div className="space-y-2">
                     <p className="text-gray-700">
-                      <strong className="text-secondary">Quinta-feira:</strong> 19:30h (Culto de Oração)
+                      <strong className="text-secondary">Quinta-feira:</strong> 19:30h (Campanha - Sempre uma nova)
                     </p>
                     <p className="text-gray-700">
-                      <strong className="text-secondary">Domingo:</strong> 18:30h (Culto Dominical)
+                      <strong className="text-secondary">Domingo:</strong> 18:30h (Culto da Família)
                     </p>
                     <p className="text-primary font-semibold">
                       <strong>Santa Ceia:</strong> Todo 2º Domingo do mês

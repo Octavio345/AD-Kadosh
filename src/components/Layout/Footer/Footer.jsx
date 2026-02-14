@@ -130,15 +130,15 @@ const Footer = () => {
                     <div key={time.day} className="bg-white/10 p-3 rounded-lg hover:bg-white/15 transition-colors">
                       <div className="flex justify-between items-center">
                         <div className="flex items-center gap-2">
-                          {IconComponent && <IconComponent className="w-4 h-4 text-secondary" />}
-                          <span className="font-semibold">{time.day}</span>
+                          {IconComponent && <IconComponent className="w-4 h-4 text-white" />}
+                          <span className="font-semibold text-white">{time.day}</span>
                         </div>
-                        <span className="font-bold text-secondary">{time.time}</span>
+                        <span className="font-bold text-yellow-300">{time.time}</span>
                       </div>
                       <div className="flex items-center justify-between mt-1">
-                        <p className="text-xs opacity-90">{time.type}</p>
+                        <p className="text-xs text-white/80">{time.type}</p>
                         {time.description && (
-                          <span className="text-[10px] bg-secondary/20 px-2 py-0.5 rounded-full text-secondary-light">
+                          <span className="text-[10px] bg-yellow-300/30 px-2 py-0.5 rounded-full text-yellow-100 font-medium">
                             {time.description}
                           </span>
                         )}
@@ -150,12 +150,12 @@ const Footer = () => {
               
               <div className="mt-4 space-y-2">
                 <div className="flex items-center gap-2 opacity-90">
-                  <MapPin className="w-4 h-4 flex-shrink-0" />
-                  <span className="text-sm">Av. José Emídio de Faria, 2198 - Mirassol/SP</span>
+                  <MapPin className="w-4 h-4 flex-shrink-0 text-white" />
+                  <span className="text-sm text-white/90">Av. José Emídio de Faria, 2198 - Mirassol/SP</span>
                 </div>
                 <div className="flex items-center gap-2 opacity-90">
-                  <Phone className="w-4 h-4 flex-shrink-0" />
-                  <span className="text-sm">(17) 99649-3144</span>
+                  <Phone className="w-4 h-4 flex-shrink-0 text-white" />
+                  <span className="text-sm text-white/90">(17) 99649-3144</span>
                 </div>
               </div>
             </div>
