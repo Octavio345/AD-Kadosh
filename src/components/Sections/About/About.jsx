@@ -11,11 +11,17 @@ import {
   Facebook,
   Youtube,
   Video,
-  Globe
+  Globe,
+  Flower2,
+  X,
+  Clock3,
+  Sparkles
 } from 'lucide-react';
-import { Link } from 'react-scroll';
+import { useState } from 'react';
 
 const About = () => {
+  const [showBanner, setShowBanner] = useState(true);
+
   const values = [
     { icon: <Cross />, title: 'Santidade', desc: 'Vida separada e consagrada a Deus' },
     { icon: <Flame />, title: 'Pentecostes', desc: 'Batismo no Espírito Santo com evidência de línguas' },
@@ -99,7 +105,7 @@ const About = () => {
 
   // Função para abrir WhatsApp do Pastor
   const openPastorWhatsApp = () => {
-    const pastorNumber = '5517996493144'; // Número do Pastor Oziel
+    const pastorNumber = '5517996493144';
     const message = `Olá, Pastor Oziel! Vi seu perfil no site da Assembleia de Deus Ministério Kadosh e gostaria de conversar com o senhor. 
 
 • Tenho interesse em conhecer melhor a igreja
@@ -132,6 +138,65 @@ Aguardo seu retorno. Que Deus abençoe!`;
   return (
     <section id="about" className="py-12 md:py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 sm:px-6">
+        
+        {/* BANNER DO CULTO DAS FLORES - VERSÃO FINAL CORRIGIDA */}
+        {showBanner && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="mb-6 md:mb-8 relative"
+          >
+            {/* Tag de CULTO ESPECIAL acima do banner */}
+            <div className="flex justify-center mb-2">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-1.5 rounded-full text-xs md:text-sm font-bold shadow-lg">
+                <Sparkles className="w-3 h-3 md:w-4 md:h-4" />
+                CULTO ESPECIAL
+                <Sparkles className="w-3 h-3 md:w-4 md:h-4" />
+              </div>
+            </div>
+
+            {/* Botão para fechar o banner - SEM FUNDO BRANCO */}
+            <button
+              onClick={() => setShowBanner(false)}
+              className="absolute top-2 right-2 z-20 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 shadow-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm"
+              aria-label="Fechar banner"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            {/* Container do banner - SEM BORDA ROSA */}
+            <div className="relative overflow-hidden">
+              {/* Imagem do banner - COM BORDAS ARREDONDADAS */}
+              <div className="w-full flex justify-center">
+                <img 
+                  src="/assets/images/banner-culto-das-flores.jpg"
+                  alt="Culto das Flores - 12 de Março de 2026 às 19:30 - Salmo 145:19"
+                  className="w-full h-auto max-h-[300px] md:max-h-[400px] object-contain rounded-xl md:rounded-2xl"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://via.placeholder.com/1200x400/8B5CF6/FFFFFF?text=Culto+das+Flores+-+12%2F03%2F2026+-+19%3A30";
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Link direto para o Salmo - abaixo do banner */}
+            <div className="mt-2 flex justify-end">
+              <a 
+                href="https://www.bibliaonline.com.br/acf/sl/145/19"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-pink-600 hover:text-pink-800 transition-colors inline-flex items-center gap-1 bg-pink-50 px-3 py-1 rounded-full"
+              >
+                <BookOpen className="w-3 h-3" />
+                Salmo 145:19
+                <ArrowRight className="w-3 h-3" />
+              </a>
+            </div>
+          </motion.div>
+        )}
+
         {/* Header */}
         <motion.div
           id="sobre-historia"
