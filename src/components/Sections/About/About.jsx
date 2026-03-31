@@ -170,7 +170,7 @@ Aguardo seu retorno. Que Deus abençoe!`;
               {/* Imagem do banner - COM BORDAS ARREDONDADAS */}
               <div className="w-full flex justify-center">
                 <img 
-                  src="/assets/images/banner-culto-das-flores.jpg"
+                  src="/assets/images/provocadore_de_milagres.jpeg"
                   alt="Culto das Flores - 12 de Março de 2026 às 19:30 - Salmo 145:19"
                   className="w-full h-auto max-h-[300px] md:max-h-[400px] object-contain rounded-xl md:rounded-2xl"
                   onError={(e) => {
@@ -179,20 +179,6 @@ Aguardo seu retorno. Que Deus abençoe!`;
                   }}
                 />
               </div>
-            </div>
-
-            {/* Link direto para o Salmo - abaixo do banner */}
-            <div className="mt-2 flex justify-end">
-              <a 
-                href="https://www.bibliaonline.com.br/acf/sl/145/19"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-pink-600 hover:text-pink-800 transition-colors inline-flex items-center gap-1 bg-pink-50 px-3 py-1 rounded-full"
-              >
-                <BookOpen className="w-3 h-3" />
-                Salmo 145:19
-                <ArrowRight className="w-3 h-3" />
-              </a>
             </div>
           </motion.div>
         )}
